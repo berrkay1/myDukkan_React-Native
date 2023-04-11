@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 
-const ProductCart = ({ product }) => {
+const ProductCart = ({ product,gotoDetail }) => {
     return (
-        <View style={styles.container}>
+        <TouchableWithoutFeedback onPress={gotoDetail}>
+            <View style={styles.container}>
             <Image
                 style={styles.image}
                 source={{ uri: product.image }}
@@ -14,6 +15,7 @@ const ProductCart = ({ product }) => {
             </View>
 
         </View>
+        </TouchableWithoutFeedback>   
     )
 }
 

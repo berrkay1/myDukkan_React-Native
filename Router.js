@@ -10,8 +10,31 @@ export default function Router() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="ProductScreen" component={Product} />
-        <Stack.Screen name="DetailScreen" component={Detail} />
+        <Stack.Screen
+         name="ProductScreen"
+          component={Product}
+          options={
+            {
+              title:'Dükkan',
+              headerStyle:{backgroundColor:'#64b5f6',},
+              headerTitleStyle:{color:'white'},
+              headerTitleAlign: 'center',
+            }
+          }
+          />
+        <Stack.Screen
+
+         name="DetailScreen"
+          component={Detail}
+          options={
+            {
+              title:'Detay',
+              headerStyle:{backgroundColor:'#64b5f6',},
+              headerTitleStyle:{color:'white'},
+              headerTitleAlign: 'center',
+            }
+          }
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );
