@@ -1,10 +1,10 @@
-import { StyleSheet, Text, TextButton, TouchableOpacity, } from 'react-native'
+import { ActivityIndicator, StyleSheet, Text, TextButton, TouchableOpacity, } from 'react-native'
 import React from 'react'
 
-const Button = ({ text ,onPress}) => {
+const Button = ({ text, onPress, loading }) => {
     return (
         <TouchableOpacity onPress={onPress} style={styles.container}>
-           <Text style={styles.title}>{text}</Text>
+            { <Text style={styles.title}>{text}</Text>}
         </TouchableOpacity>
     )
 }
@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
         margin: 10,
         backgroundColor: '#2286c3',
         borderRadius: 5,
-        alignItems:'center'
+        alignItems: 'center'
     },
-    
-    title:{
-        fontWeight:'bold',
-        fontSize:17,
-        color:'#fff'
+
+    title: {
+        fontWeight: 'bold',
+        fontSize: 17,
+        color: '#fff'
     }
 })

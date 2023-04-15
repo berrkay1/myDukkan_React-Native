@@ -1,10 +1,10 @@
 import { StyleSheet, Text, TextInput, View,TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const Input = ({ placeholder,onType }) => {
+const Input = ({ placeholder,onType,value }) => {
     return (
         <View style={styles.container}>
-            <TextInput placeholder={placeholder} onChange={onType} />
+            <TextInput placeholder={placeholder} onChangeText={onType} value={value} />
         </View>
     )
 }
