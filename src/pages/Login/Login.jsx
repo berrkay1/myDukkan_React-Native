@@ -5,8 +5,15 @@ import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 import { Formik } from 'formik';
 import usePost from '../../Hook/usePost'
+import { useDispatch } from 'react-redux'
+
+
+
+
 
 const Login = ({ navigation }) => {
+
+    const dispatch = useDispatch();
 
     const { data, error, loading, post } = usePost()
 
@@ -21,11 +28,13 @@ const Login = ({ navigation }) => {
         if (data.status === 'Error') {
             Alert.alert('Kullanıcı bulunamadı!')
         } else {
-            navigation.navigate('ProductScreen')
+            dispatch({type:'SET_USER',payload:{user}})
+            
+            
         }
     }
 
-console.log('error', error)
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.logo_container}>
@@ -60,6 +69,10 @@ console.log('error', error)
 }
 
 export default Login
+
+const user = {
+
+}
 
 const styles = StyleSheet.create({
     container: {
